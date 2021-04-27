@@ -1,0 +1,34 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="StatisticsResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="expression" type="Expression"/>
+                <xsd:element name="allExpressionsByDate" type="ExpressionListResponse"/>
+                <xsd:element name="popularNumber" type="NumberResponse"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="Expression">
+        <xsd:sequence>
+            <xsd:element name="date" type="xsd:date"/>
+            <xsd:element name="expression" type="xsd:string"/>
+            <xsd:element name="solution" type="xsd:double"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="ExpressionListResponse">
+        <xsd:sequence>
+            <xsd:element name="list" maxOccurs="unbounded" minOccurs="0" type="Expression"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="NumberResponse">
+        <xsd:sequence>
+            <xsd:element name="value" type="xsd:double"/>
+            <xsd:element name="count" type="xsd:int"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

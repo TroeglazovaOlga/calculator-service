@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS number
+(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    value DOUBLE,
+    date TIMESTAMP,
+    count INT
+);

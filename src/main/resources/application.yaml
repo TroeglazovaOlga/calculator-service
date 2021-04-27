@@ -4,7 +4,26 @@ spring:
     driverClassName: org.h2.Driver
     username: username
     password: password
+
   h2:
     console:
       enabled: true
       path: /h2
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  liquibase:
+    change-log: classpath:db/changelog.xml
+
+  kafka:
+    default-topic: test-topic
+    bootstrap-servers: "localhost:9092"
+    group-id: foo
+    ack-mode: record
+    max-in-flight-requests-per-connection: 10
+    batch-size: 16384
+    auto-offset-reset: latest
+    isolation-level: read_committed
+    enable-auto-commit: true
